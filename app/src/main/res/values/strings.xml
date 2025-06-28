@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">Formula Grid</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="home_fragment_label">Home Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+    <string name="str_app_name">Formula Grid</string>
+    <string name="str_app_slogan">YOUR TEAM, YOUR RACE</string>
+    <string name="str_app_welcome">Welcome To\nFormula Grid</string>
+    <string name="str_lets_lock_in">Lets Lock in</string>
+    <string name="str_welcome_description1">Build Your Dream F1 Team </string>
+    <string name="str_welcome_description2">Score Big, Rule The Leaderboard.</string>
+    <string name="str_email">EMAIL</string>
+    <string name="str_sign_in">Sign In</string>
+    <string name="str_sign_in_desc">Sign In With Your Formula Grid account</string>
+    <string name="str_password">PASSWORD</string>
+    <string name="str_forgot_pass">Forgot your password?</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="str_dont_have_account">Don\'t have an account?\n</string>
+    <string name="str_sign_up">Sign Up</string>
+    <string name="str_sign_up_desc">Register with your crendentials</string>
+    <string name="str_firstName">First Name</string>
+    <string name="str_already_have_account">Already have an account?</string>
+
+
+</resources>
