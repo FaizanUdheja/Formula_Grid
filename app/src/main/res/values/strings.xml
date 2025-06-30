@@ -21,8 +21,11 @@
     <string name="str_dont_have_account">Don\'t have an account?\n</string>
     <string name="str_sign_up">Sign Up</string>
     <string name="str_sign_up_desc">Register with your crendentials</string>
-    <string name="str_firstName">First Name</string>
+    <string name="str_userName">User Name</string>
     <string name="str_already_have_account">Already have an account?</string>
+    <string name="str_round">Round11</string>
+    <string name="str_confirm_password">Confirm Password</string>
+    <string name="signup_fragment_label">Sign Up</string>
 
 
 </resources>

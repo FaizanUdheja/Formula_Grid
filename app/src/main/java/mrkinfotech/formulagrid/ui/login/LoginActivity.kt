@@ -6,7 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
-import androidx.navigation.ui.setupActionBarWithNavController
+import com.google.firebase.auth.FirebaseAuth
 import mrkinfotech.formulagrid.R
 import mrkinfotech.formulagrid.databinding.ActivityLoginBinding
 
@@ -25,8 +25,10 @@ class LoginActivity : AppCompatActivity() {
         return navController.navigateUp(appBarConfiguration)
                 || super.onSupportNavigateUp()
     }
-
     fun onMyButtonClick(view: View) {
         setContentView(R.layout.activity_main)
+    }
+    fun onSignUpClick(view: View) {
+        setContentView(R.layout.activity_sign_up)
     }
 }

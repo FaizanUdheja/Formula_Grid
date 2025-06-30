@@ -5,7 +5,6 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.login.LoginActivity">
-
-    <include layout="@layout/login_content_main" />
+    tools:context=".ui.login.SignUpActivity">
+<include layout="@layout/fragment_sign_up"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

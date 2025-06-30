@@ -17,7 +17,7 @@ class OnBoardingActivity : AppCompatActivity() {
 
         binding.GetStarted.setOnClickListener {
 
-            val onBoardShow = startActivity(Intent(this, LoginActivity::class.java))
+            startActivity(Intent(this, LoginActivity::class.java))
             PreferenceHelper.setOnBoardingShow(this, "true")
         }
     }

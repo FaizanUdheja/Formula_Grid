@@ -35,6 +35,7 @@ class PreferenceHelper {
             val userEmail = getUserEmail(context)
             return userEmail != null && userEmail != VERSION_NAME
         }
+
         fun getOnBoardingShow(context: Context): String? {
             return getSharedPrefs(context).getString(KEY_ONBOARDING_SHOW, VERSION_NAME)
         }

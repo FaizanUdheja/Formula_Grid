@@ -1,6 +1,5 @@
 package mrkinfotech.formulagrid.ui.base
 
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
@@ -17,16 +16,16 @@ class SplashActivity : AppCompatActivity() {
         setContentView(R.layout.activity_splash)
         Handler(Looper.getMainLooper()).postDelayed({
             if (PreferenceHelper.isUserLoggedIn(this)) {
-                if(PreferenceHelper.getOnBoardingShow(this) == "true"){
+                if (PreferenceHelper.getOnBoardingShow(this) == "true") {
                     startActivity(Intent(this, HomeMainActivity::class.java))
-                }else{
+                } else {
                     startActivity(Intent(this, OnBoardingActivity::class.java))
                 }
-            } else{
+            } else {
                 startActivity(Intent(this, LoginActivity::class.java))
             }
 
-            finish() // Closes splash activity so user can't return to it
+            finish()
         }, 2000)
     }
 }

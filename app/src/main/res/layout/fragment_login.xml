@@ -130,30 +130,30 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/padding_32"
+        android:layout_marginTop="@dimen/padding_56"
+        android:layout_marginEnd="@dimen/margin_14"
         android:fontFamily="@font/exo2_italic"
         android:text="@string/str_dont_have_account"
-        android:layout_marginTop="@dimen/padding_56"
         android:textColor="@color/color_white"
         android:textSize="@dimen/font_10"
-        android:layout_marginEnd="@dimen/margin_14"
         app:layout_constraintEnd_toEndOf="@+id/sign_up_button"
         app:layout_constraintStart_toEndOf="@+id/forgot_pass"
         app:layout_constraintTop_toBottomOf="@+id/password" />
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:layout_width="wrap_content"
         android:id="@+id/sign_up_button"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/padding_56"
-        android:fontFamily="@font/exo2_italic"
         android:layout_marginEnd="@dimen/margin_48"
+        android:fontFamily="@font/exo2_italic"
+        android:onClick="onSignUpClick"
         android:text="@string/str_sign_up"
         android:textColor="@color/color_primary"
         android:textSize="@dimen/font_10"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/dont_have_account"
-        app:layout_constraintTop_toBottomOf="@+id/password"
-        android:onClick="onSignUpClick"/>
+        app:layout_constraintTop_toBottomOf="@+id/password" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,18 +1,20 @@
 package mrkinfotech.formulagrid.ui.login
 
+import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.fragment.findNavController
-import mrkinfotech.formulagrid.R
+import android.widget.Toast
+import androidx.fragment.app.Fragment
+import com.google.firebase.auth.FirebaseAuth
 import mrkinfotech.formulagrid.databinding.FragmentSignUpBinding
 
 
 class SignUpFragment : Fragment() {
 
     private lateinit var binding: FragmentSignUpBinding
+    private lateinit var firebaseAuth: FirebaseAuth
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -20,18 +22,48 @@ class SignUpFragment : Fragment() {
     ): View? {
         binding = FragmentSignUpBinding.inflate(inflater)
         return binding.root
+        firebaseAuth = FirebaseAuth.getInstance()
+
+        binding.signInButton.setOnClickListener {
+            startActivity(Intent(requireContext(), LoginActivity::class.java))
+        }
+        binding.buttonSignUp.setOnClickListener {
+            val userName = binding.enterUserName.text.toString()
+            val email = binding.enterEmail.text.toString()
+            val pass = binding.enterPassword.text.toString()
+            val confpass = binding.enterConfirmPassword.text.toString()
+
+            if (userName.isNotEmpty() && email.isNotEmpty() && pass.isNotEmpty() && confpass.isNotEmpty()) {
+                if (pass == confpass) {
+                    firebaseAuth.createUserWithEmailAndPassword(email, pass).addOnCompleteListener {
+                        if (it.isSuccessful) {
+                            startActivity(Intent(requireContext(), LoginActivity::class.java))
+                        } else {
+                            Toast.makeText(
+                                requireContext(),
+                                it.exception.toString(),
+                                Toast.LENGTH_SHORT
+                            ).show()
+
+                        }
+                    }
+                } else {
+                    Toast.makeText(requireContext(), "Password does not match", Toast.LENGTH_SHORT)
+                        .show()
+                }
+            } else {
+                Toast.makeText(requireContext(), "Empty fields are not allowed", Toast.LENGTH_SHORT)
+                    .show()
+
+            }
+        }
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.buttonSignUp.setOnClickListener {
-            findNavController().navigate(R.id.LoginFragment)
-        }
 
-        binding.signInButton.setOnClickListener {
-            binding.buttonSignUp.performClick()
-        }
+
     }
-
-
 }
+
+

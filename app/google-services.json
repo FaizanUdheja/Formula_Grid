@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "630243260026",
+    "project_id": "formula-grid",
+    "storage_bucket": "formula-grid.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:630243260026:android:c97e9072bbcd782dc2edc3",
+        "android_client_info": {
+          "package_name": "mrkinfotech.formulagrid"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAjbdb6U54rjqGfAtCllFUgUO0TTSl9KXs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
