@@ -27,21 +27,27 @@ class LoginFragment : Fragment() {
     ): View? {
         binding = FragmentLoginBinding.inflate(inflater)
         return binding.root
+
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
         firebaseAuth = FirebaseAuth.getInstance()
 
         binding.signUpButton.setOnClickListener {
-            startActivity(Intent(requireContext(), SignUpActivity::class.java))
+           findNavController().navigate(R.id.SignUpFragment)
         }
 
         binding.buttonSignIn.setOnClickListener {
             val email = binding.enterEmail.text.toString()
             val pass = binding.enterPassword.text.toString()
 
-
             if (email.isNotEmpty() && pass.isNotEmpty()) {
                 firebaseAuth.signInWithEmailAndPassword(email, pass).addOnCompleteListener {
                     if (it.isSuccessful) {
-                        startActivity(Intent(requireContext(), LoginActivity::class.java))
+                        startActivity(Intent(requireContext(), HomeMainActivity::class.java))
+                        PreferenceHelper.setUserEmail(requireContext(),email)
                     } else {
                         Toast.makeText(
                             requireContext(),
@@ -57,12 +63,5 @@ class LoginFragment : Fragment() {
 
             }
         }
-
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-
     }
 }

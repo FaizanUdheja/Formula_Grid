@@ -11,4 +11,13 @@
         android:label="@string/home_fragment_label"
         tools:layout="@layout/fragment_login">
     </fragment>
+
+    <fragment
+        android:id="@+id/SignUpFragment"
+        android:name="mrkinfotech.formulagrid.ui.login.SignUpFragment"
+        android:label="@string/signup_fragment_label"
+        tools:layout="@layout/fragment_sign_up">
+    </fragment>
+
+
 </navigation>

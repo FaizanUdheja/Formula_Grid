@@ -25,10 +25,4 @@ class LoginActivity : AppCompatActivity() {
         return navController.navigateUp(appBarConfiguration)
                 || super.onSupportNavigateUp()
     }
-    fun onMyButtonClick(view: View) {
-        setContentView(R.layout.activity_main)
-    }
-    fun onSignUpClick(view: View) {
-        setContentView(R.layout.activity_sign_up)
-    }
 }
