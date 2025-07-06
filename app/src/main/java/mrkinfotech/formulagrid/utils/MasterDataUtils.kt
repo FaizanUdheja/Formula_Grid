@@ -54,4 +54,16 @@ object MasterDataUtils {
         )
         return dataset
     }
+
+    fun viewSlider(context: Context): ArrayList<String> {
+        val dataset = ArrayList<String>()
+
+        dataset.add(
+            AppHelper.getDrawableUri(context, R.drawable.ic_app_logo)
+        )
+        dataset.add(
+            AppHelper.getDrawableUri(context, R.drawable.brazil_flag)
+        )
+        return dataset
+    }
 }

@@ -9,6 +9,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.google.firebase.auth.FirebaseAuth
 import mrkinfotech.formulagrid.databinding.FragmentSignUpBinding
+import mrkinfotech.formulagrid.utils.CustomDialog
 
 
 class SignUpFragment : Fragment() {
@@ -52,12 +53,10 @@ class SignUpFragment : Fragment() {
                         }
                     }
                 } else {
-                    Toast.makeText(requireContext(), "Password does not match", Toast.LENGTH_SHORT)
-                        .show()
+                    CustomDialog.showToast(requireContext(), "Password does not match")
                 }
             } else {
-                Toast.makeText(requireContext(), "Empty fields are not allowed", Toast.LENGTH_SHORT)
-                    .show()
+                    CustomDialog.showToast(requireContext(), "Empty fields are not allowed")
 
             }
         }

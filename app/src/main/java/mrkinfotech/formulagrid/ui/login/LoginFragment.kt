@@ -13,6 +13,7 @@ import com.google.firebase.auth.FirebaseAuth
 import mrkinfotech.formulagrid.R
 import mrkinfotech.formulagrid.databinding.FragmentLoginBinding
 import mrkinfotech.formulagrid.ui.home.HomeMainActivity
+import mrkinfotech.formulagrid.utils.CustomDialog
 import mrkinfotech.formulagrid.utils.PreferenceHelper
 
 
@@ -58,8 +59,7 @@ class LoginFragment : Fragment() {
                     }
                 }
             } else {
-                Toast.makeText(requireContext(), "Empty fields are not allowed", Toast.LENGTH_SHORT)
-                    .show()
+                CustomDialog.showToast(requireContext(), "Empty fields are not allowed")
 
             }
         }

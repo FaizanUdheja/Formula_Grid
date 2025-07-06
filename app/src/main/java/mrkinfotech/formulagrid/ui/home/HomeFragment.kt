@@ -1,16 +1,14 @@
 package mrkinfotech.formulagrid.ui.home
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import mrkinfotech.formulagrid.R
 import mrkinfotech.formulagrid.databinding.FragmentFirstBinding
 import mrkinfotech.formulagrid.ui.adapter.ItemAdapter
-import mrkinfotech.formulagrid.ui.data.ModelClass
-import mrkinfotech.formulagrid.utils.AppHelper
+import mrkinfotech.formulagrid.ui.adapter.ViewPageAdapter
 import mrkinfotech.formulagrid.utils.MasterDataUtils
 
 class HomeFragment : Fragment() {
@@ -41,6 +39,9 @@ class HomeFragment : Fragment() {
 
                 })
         binding.recyclerView.adapter = itemAdapter
+
+        binding.viewPager.adapter =
+            ViewPageAdapter(requireContext(), MasterDataUtils.viewSlider(requireContext()))
     }
 
     override fun onDestroyView() {

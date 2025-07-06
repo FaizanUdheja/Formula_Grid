@@ -15,14 +15,14 @@ class SplashActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
         Handler(Looper.getMainLooper()).postDelayed({
-            if (PreferenceHelper.isUserLoggedIn(this)) {
-                if (PreferenceHelper.getOnBoardingShow(this) == "true") {
+            if (PreferenceHelper.getOnBoardingShow(this)=="true") {
+                if (PreferenceHelper.isUserLoggedIn(this)) {
                     startActivity(Intent(this, HomeMainActivity::class.java))
                 } else {
-                    startActivity(Intent(this, OnBoardingActivity::class.java))
+                    startActivity(Intent(this, LoginActivity::class.java))
                 }
             } else {
-                startActivity(Intent(this, LoginActivity::class.java))
+                startActivity(Intent(this, OnBoardingActivity::class.java))
             }
 
             finish()

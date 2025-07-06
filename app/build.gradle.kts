@@ -57,4 +57,5 @@ dependencies {
     implementation(platform(libs.firebase.bom))
     implementation(libs.firebase.analytics)
     implementation ("com.google.firebase:firebase-auth:23.2.1")
+    implementation (libs.androidx.viewpager2)
 }
